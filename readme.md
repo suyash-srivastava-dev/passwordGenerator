@@ -6,6 +6,8 @@ It's main purpose is to generate passwords for the site. Since google suggested 
 
 Just in case want's to save it over the mobile devices.
 
+**credit: [https://davidshimjs.github.io/qrcodejs/](https://davidshimjs.github.io/qrcodejs/)**
+
 ## Demo
 
 1. Extension
