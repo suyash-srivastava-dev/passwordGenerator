@@ -1,6 +1,7 @@
 
 function generateRandomPassword(length) {
   // Define the characters that can be used in the password
+  // TODO: Option for adding number of required character length with type of character
   const characters_caps =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const characters_small =
@@ -31,31 +32,26 @@ function generateRandomPassword(length) {
 
   return password;
 }
-window.onload = function () {
-  document.getElementById("myBtn").addEventListener("click", function () {
-    const passgen = generateRandomPassword(20);
-    const outputpass = document.getElementById("outputpass");
-    outputpass.innerHTML = passgen;
-    // TODO: add copy text button next to generated text
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(passgen)
-        .then(function () {
-          alert("Text copied to clipboard!");
-        })
-        .catch(function (error) {
-          alert("Copy failed: " + error);
-        });
-    }
-    const qrcode = new QRCode("qrcode",
-      {
-        text: passgen,
-        width: 128,
-        height: 128,
-        colorDark: "#000000",
-        colorLight: "#ffffff"
-      });
-    let qrcodediv = document.getElementById("qrcode");
-    qrcodediv = qrcode
 
+window.onload = function () {
+  var qrcode = new QRCode("qrcode", {
+      width: 128,
+      height: 128
   });
-}
+    document.getElementById("myBtn").addEventListener("click", function () {
+      const passgen = generateRandomPassword(20);
+      const outputpass = document.getElementById("outputpass");
+      outputpass.innerHTML = 'pass:\t'+passgen;
+      qrcode.makeCode(passgen)
+      // TODO: add copy text button next to generated text
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(passgen)
+          .then(function () {
+            alert("Text copied to clipboard!");
+          })
+          .catch(function (error) {
+            alert("Copy failed: " + error);
+          });
+      }
+    });
+  }
