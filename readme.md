@@ -2,6 +2,11 @@
 
 It's main purpose is to generate passwords for the site. Since google suggested password doesn't work without the logged in user. And just wanted to generate a one time password for the site.
 
+## Demo site
+
+[https://password-generator-yhle.onrender.com](https://password-generator-yhle.onrender.com/)
+
+deployed [@render.com](https://render.com/)
 ## QRCode generator 
 
 Just in case want's to save it over the mobile devices.
