@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
     <script src="qrcode.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         button {
             padding: 10px 10px;
@@ -34,10 +35,38 @@
             text-align: center;
             width: 400px;
         }
+        .sale-banner {
+        display: block;
+        background: linear-gradient(90deg, #ff3c3c, #ff6f00);
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        padding: 15px 10px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-decoration: none;
+        animation: pulse 1.5s infinite;
+        }
+
+        .sale-banner:hover {
+        background: linear-gradient(90deg, #ff6f00, #ff3c3c);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.01); }
+        100% { transform: scale(1); }
+        }
     </style>
 </head>
 
 <body>
+    <a href="laptopDeal.html" class="sale-banner">
+  🔥 SALE ON LAPTOPS - LIMITED TIME ONLY! 🔥
+    </a>
     <script src="index.js"></script>
     <div class="center">
         <h1 id="pop" class="center">Generate password</h1>
